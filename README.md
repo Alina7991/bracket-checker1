@@ -23,24 +23,27 @@ class Stack:
 
 И основная функция:
 
-    def is_balanced_brackets(s):
+```
+def is_balanced_brackets(s):
 
-        stack = Stack()
+    stack = Stack()
 
-        brackets = {"(": ")", "{": "}", "[": "]"}
+    brackets = {"(": ")", "{": "}", "[": "]"}
 
-        for char in s:
-            if char in brackets:
-                stack.push(char)
-            elif char in brackets.values():
-                top = stack.pop()
-                if top is None or brackets[top] != char:
-                    return False
-        return stack.is_empty()
+    for char in s:
+        if char in brackets:
+            stack.push(char)
+        elif char in brackets.values():
+            top = stack.pop()
+            if top is None or brackets[top] != char:
+                return False
+    return stack.is_empty()
+```
 
 
 Результатом выполнения программы будет сообщение о том, является ли данная строка правильной скобочной последовательностью или нет. 
-
-    for example in examples:
-        result = is_balanced_brackets(example)
-        print(f"{example}:{"Правильная скобочная последовательность" if result else "Неправильная скобочная последовательность"}")
+````
+for example in examples:
+    result = is_balanced_brackets(example)
+    print(f"{example}:{"Правильная скобочная последовательность" if result else "Неправильная скобочная последовательность"}")
+````
